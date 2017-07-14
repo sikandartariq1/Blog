@@ -3,5 +3,7 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, :as => :likeable, dependent: :destroy	
   validates :title, presence: true, length: {minimum: 5}
+  scope :created_before, ->(time) {where("created_at < ?", time)}
+  scope :created_today, -> {where(created_at: (Time.zone.now - 24.hours)..Time.zone.now)}
 
 end
