@@ -2,11 +2,6 @@
 <html>
   <head>
     <title>Blog</title>
-
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
-    <% end -%>
-    
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,6 +9,10 @@
   </head>
 
   <body>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
+
     <%= yield %>
   </body>
 </html>
