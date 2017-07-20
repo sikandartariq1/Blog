@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'persons/index'
+
   get 'welcome/Index'
 
   resources :articles do
