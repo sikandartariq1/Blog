@@ -1,12 +1,12 @@
-class ReviewsController < ApplicationController
+class Admin::ReviewsController < ApplicationController
   def index
-  	@reviews = Review.all
+  	@reviews = Admin::Review.all
   end
   def new
-  	@review = Review.new
+  	@review = Admin::Review.new
   end
   def create
-  	@review = Review.new(review_params)
+  	@review = Admin::Review.new(review_params)
 
   	if @review.save
 			flash[:success] = "Great! Your review has been saved!"
@@ -18,13 +18,13 @@ class ReviewsController < ApplicationController
 
   end
   def show
-  	@review = Review.find(params[:id])
+  	@review = Admin::Review.find(params[:id])
 
   end
 
   private
 	def review_params
-		params.require(:review).permit(:name,:review_type,:body)
+		params.require(:admin_review).permit(:name,:review_type,:body)
 	end
 
 end

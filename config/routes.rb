@@ -5,15 +5,17 @@ Rails.application.routes.draw do
 
   get 'welcome/Index'
 
+  namespace :admin do
+    resources :reviews
+  end
+
   resources :articles do
     resources :comments
   end
 
-  resources :reviews
   resources :persons do
   	get 'subordinates', on: :member
   end 
-
 
   root 'welcome#Index'
 
