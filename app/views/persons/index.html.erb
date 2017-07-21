@@ -1,5 +1,6 @@
 <h1>Listing Persons</h1>
- 
+<%= link_to 'Add New Person', new_person_path %>
+
 <table>
   <tr>
     <th>Person Name</th>
@@ -11,6 +12,9 @@
     <tr>
       <td><%= person.name %></td>
       <td><%= person.manager.name %></td>
+      <td><%= link_to 'Show Person', person_path(person) %></td>
+      <td><%= link_to 'Show Manager', person_path(person.manager) %></td>
+
     </tr>
   <% end %>
 </table>

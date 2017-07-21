@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+
   resources :reviews
+  resources :persons do
+  	get 'subordinates', on: :member
+  end 
+
 
   root 'welcome#Index'
 

@@ -1,0 +1,15 @@
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+<p>
+  <strong>Phone No:</strong>
+  <%= @person.phone_no %>
+</p>
+<p>
+  <strong>Company:</strong>
+  <%= @person.company %>
+</p>
+<td><%= link_to 'Subordinates', subordinates_person_path(@person) %></td>
+
+<%= link_to 'Back', persons_path %>

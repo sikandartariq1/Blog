@@ -1,0 +1,17 @@
+<h1>Listing Subordinates</h1>
+
+<h3>Manager Name : <strong> <%= @person.name%> </strong> </h3> 
+<table>
+  <tr>
+    <th>Subordinates Name</th>
+
+  </tr>
+ 
+  <% @person.subordinates.each do |subordinate| %>
+    <tr>
+      <td><%= subordinate.name %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', persons_path %>

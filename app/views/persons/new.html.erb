@@ -1,0 +1,12 @@
+<%= form_tag(persons_path) do %>
+	<%= label_tag(:name, "Name:") %>
+	<%= text_field(:person,:name) %><br>	
+	<%= label_tag(:phone_no, "Phone No:") %>
+	<%= text_field(:person,:phone_no) %><br>
+	<%= label_tag(:company, "Company:") %>
+	<%= text_field(:person,:company) %><br>
+	<%= label_tag(:manager_id, "Manager ID:") %>
+	<%= text_field_tag(:manager_id) %><br>
+
+	<%= submit_tag("Submit") %>
+<% end %>
