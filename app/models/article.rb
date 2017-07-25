@@ -12,4 +12,6 @@ class Article < ApplicationRecord
   scope :created_before, ->(time) {where("created_at < ?", time)}
   scope :created_today, -> {where(created_at: (Time.zone.now - 24.hours)..Time.zone.now)}
 
+  mount_uploader :article, ArticleUploader
+
 end
