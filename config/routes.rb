@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :people
   get 'reviews/index'
 
   get 'persons/index'

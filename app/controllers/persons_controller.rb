@@ -1,4 +1,6 @@
 class PersonsController < ApplicationController
+	before_action :authenticate_person!
+
   def index
   	@persons = Person.all
   end
