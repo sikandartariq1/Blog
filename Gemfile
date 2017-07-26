@@ -10,6 +10,7 @@ gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem "cocoon"
 gem "jquery-rails"
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
