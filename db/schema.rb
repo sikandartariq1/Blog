@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725122817) do
+ActiveRecord::Schema.define(version: 20170726053229) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(version: 20170725122817) do
     t.index ["reset_password_token"], name: "index_persons_on_reset_password_token", unique: true
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "publications", force: :cascade do |t|
     t.integer "article_author_id"
     t.integer "published_article_id"
@@ -72,6 +79,15 @@ ActiveRecord::Schema.define(version: 20170725122817) do
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "description"
+    t.boolean "done"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 
 end
