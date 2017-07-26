@@ -9,3 +9,4 @@
 (1..100).each do |i|
   Admin::Review.create!(name: "season review #{i}", body: "review body #{i}", review_type: 'critics')
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

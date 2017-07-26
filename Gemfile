@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'activeadmin'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem "cocoon"

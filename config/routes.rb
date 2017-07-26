@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :projects
   devise_for :people
   get 'reviews/index'
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'welcome/Index'
 
-  namespace :admin do
+  namespace :critic do
     resources :reviews
   end
 

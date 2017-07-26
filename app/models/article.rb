@@ -5,8 +5,8 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, :as => :likeable, dependent: :destroy
   
-  has_many :article_publications, foreign_key: :published_article_id
-  has_many :authors, through: :publications, source: :article_author
+  has_many :publications
+  has_many :authors, through: :publications
 
   validates :title, presence: true, length: {minimum: 5}
   scope :created_before, ->(time) {where("created_at < ?", time)}
